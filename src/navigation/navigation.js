@@ -41,12 +41,15 @@ const AppNavigation = () => {
     
         <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={isLoggedIn}>
-        {isLoggedIn === 'OnboardingPage' ? (
+        {isLoggedIn === 'OnboardingPage' ? (<>
           <Stack.Screen name='OnboardingPage' component={OnboardingPage} />
+          <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen name='Profile' component={Profile} /></>
         ) : (
           <>
             <Stack.Screen name='Home' component={Home} />
             <Stack.Screen name='Profile' component={Profile} />
+            <Stack.Screen name='OnboardingPage' component={OnboardingPage} />
           </>
         )}
       </Stack.Navigator>
